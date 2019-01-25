@@ -108,16 +108,16 @@
 
 
 
-  <meta name="description" content="主要有三种方式实现爬虫：正则表达式、BeautifulSoup和lxml。lxml可以由XPath实现，BeautifulSoup和lxml均可以由CSS选择器实现。网上对这三者的性能进行了对比，结果表示lxml最优。所以打算在项目中用lxml来爬虫，个人觉得XPath比CSS选择器好用，于是学习了一下XPath语法，今日却偶然发现了Chrome浏览器可以直接对某个需要的文字直接找对对应的XPat">
+  <meta name="description" content="chrome获取Xpath主要有三种方式实现爬虫：正则表达式、BeautifulSoup和lxml。lxml可以由XPath实现，BeautifulSoup和lxml均可以由CSS选择器实现。网上对这三者的性能进行了对比，结果表示lxml最优。所以打算在项目中用lxml来爬虫，个人觉得XPath比CSS选择器好用，于是学习了一下XPath语法，今日却偶然发现了Chrome浏览器可以直接对某个需要的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="A easy way to get XPath">
 <meta property="og:url" content="http://yoursite.com/2018/12/18/A-easy-way-to-get-XPath/index.html">
 <meta property="og:site_name" content="圈亮的博客">
-<meta property="og:description" content="主要有三种方式实现爬虫：正则表达式、BeautifulSoup和lxml。lxml可以由XPath实现，BeautifulSoup和lxml均可以由CSS选择器实现。网上对这三者的性能进行了对比，结果表示lxml最优。所以打算在项目中用lxml来爬虫，个人觉得XPath比CSS选择器好用，于是学习了一下XPath语法，今日却偶然发现了Chrome浏览器可以直接对某个需要的文字直接找对对应的XPat">
-<meta property="og:updated_time" content="2018-12-18T08:16:16.123Z">
+<meta property="og:description" content="chrome获取Xpath主要有三种方式实现爬虫：正则表达式、BeautifulSoup和lxml。lxml可以由XPath实现，BeautifulSoup和lxml均可以由CSS选择器实现。网上对这三者的性能进行了对比，结果表示lxml最优。所以打算在项目中用lxml来爬虫，个人觉得XPath比CSS选择器好用，于是学习了一下XPath语法，今日却偶然发现了Chrome浏览器可以直接对某个需要的">
+<meta property="og:updated_time" content="2019-01-25T05:12:37.367Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="A easy way to get XPath">
-<meta name="twitter:description" content="主要有三种方式实现爬虫：正则表达式、BeautifulSoup和lxml。lxml可以由XPath实现，BeautifulSoup和lxml均可以由CSS选择器实现。网上对这三者的性能进行了对比，结果表示lxml最优。所以打算在项目中用lxml来爬虫，个人觉得XPath比CSS选择器好用，于是学习了一下XPath语法，今日却偶然发现了Chrome浏览器可以直接对某个需要的文字直接找对对应的XPat">
+<meta name="twitter:description" content="chrome获取Xpath主要有三种方式实现爬虫：正则表达式、BeautifulSoup和lxml。lxml可以由XPath实现，BeautifulSoup和lxml均可以由CSS选择器实现。网上对这三者的性能进行了对比，结果表示lxml最优。所以打算在项目中用lxml来爬虫，个人觉得XPath比CSS选择器好用，于是学习了一下XPath语法，今日却偶然发现了Chrome浏览器可以直接对某个需要的">
 
 
 
@@ -351,12 +351,24 @@
                 
               
 
-              <time title="创建时间：2018-12-18 16:00:59 / 修改时间：16:16:16" itemprop="dateCreated datePublished" datetime="2018-12-18T16:00:59+08:00">2018-12-18</time>
+              <time title="创建时间：2018-12-18 16:00:59" itemprop="dateCreated datePublished" datetime="2018-12-18T16:00:59+08:00">2018-12-18</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-25 13:12:37" itemprop="dateModified" datetime="2019-01-25T13:12:37+08:00">2019-01-25</time>
               
             
           </span>
@@ -410,7 +422,8 @@
       
 
       
-        <p>主要有三种方式实现爬虫：正则表达式、BeautifulSoup和lxml。lxml可以由XPath实现，BeautifulSoup和lxml均可以由CSS选择器实现。<a href="https://yq.aliyun.com/articles/638532" target="_blank" rel="external">网上</a>对这三者的性能进行了对比，结果表示lxml最优。所以打算在项目中用lxml来爬虫，个人觉得XPath比CSS选择器好用，于是学习了一下XPath语法，今日却偶然发现了Chrome浏览器可以直接对某个需要的文字直接找对对应的XPath。<br>以<a href="https://www.exploit-db.com/exploits/40039" target="_blank" rel="external">exploitdb</a>为例，用chrome浏览器访问该链接，按F12后，按Ctrl+Shift+C或者点击控制台中的指针图标（select an element in the page to inspect it），点击欲爬取的网页区域之后，在控制台Elements下会在对应的html代码部分闪烁，右击该部分代码，选择Copy-&gt;Copy XPath.</p>
+        <h2 id="chrome获取Xpath"><a href="#chrome获取Xpath" class="headerlink" title="chrome获取Xpath"></a>chrome获取Xpath</h2><p>主要有三种方式实现爬虫：正则表达式、BeautifulSoup和lxml。lxml可以由XPath实现，BeautifulSoup和lxml均可以由CSS选择器实现。<a href="https://yq.aliyun.com/articles/638532" target="_blank" rel="external">网上</a>对这三者的性能进行了对比，结果表示lxml最优。所以打算在项目中用lxml来爬虫，个人觉得XPath比CSS选择器好用，于是学习了一下XPath语法，今日却偶然发现了Chrome浏览器可以直接对某个需要的网页内容直接找到对应的XPath。<br>以<a href="https://www.exploit-db.com/exploits/40039" target="_blank" rel="external">exploitdb</a>为例，用chrome浏览器访问该链接，按F12后，按Ctrl+Shift+C或者点击控制台中的指针图标（select an element in the page to inspect it），点击欲爬取的网页区域之后，在控制台Elements下会在对应的html代码部分闪烁，右击该部分代码，选择Copy-&gt;Copy XPath.</p>
+<h2 id="获取某个标签下的所有文本"><a href="#获取某个标签下的所有文本" class="headerlink" title="获取某个标签下的所有文本"></a>获取某个标签下的所有文本</h2><p>用string方法，比如<code>content=tree.xpath(&#39;string(xpath表达式)&#39;)</code><br>为了避免xpath表达式有双引号””引出解析出错的情况，可以用”””代替string外边的’’，即<code>content=tree.xpath(&quot;&quot;&quot;string(xpath表达式)&quot;&quot;)</code></p>
 
       
     </div>
@@ -457,6 +470,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/01/25/Keng-of-Xpath/" rel="prev" title="Keng of Xpath">
+                Keng of Xpath <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -502,8 +519,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -522,7 +548,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -578,6 +604,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#chrome获取Xpath"><span class="nav-number">1.</span> <span class="nav-text">chrome获取Xpath</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取某个标签下的所有文本"><span class="nav-number">2.</span> <span class="nav-text">获取某个标签下的所有文本</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -591,7 +633,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
