@@ -96,7 +96,7 @@
   <meta name="description" content="坑 of Xpath昨天终于把折磨我很久的一个关于xpath的bug修复了。在此把坑说明一下。chrome浏览器按F12之后对源码右击选择Copy-&amp;gt;Xpath即可获取某部分的Xpath路径（详见我的上一篇文章）。然而F12得到的源码并非真正的源码，真正的源码与F12得到的源码不一定相同。真正的源码可通过右击网页-&amp;gt;查看网页源代码获取。举个例子，要爬取某个nvd页面的标题“CVE-20">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Keng of Xpath">
-<meta property="og:url" content="http://yoursite.com/2019/01/25/Keng-of-Xpath/index.html">
+<meta property="og:url" content="https://hungryfoolou.github.io/2019/01/25/Keng-of-Xpath/index.html">
 <meta property="og:site_name" content="圈亮的博客">
 <meta property="og:description" content="坑 of Xpath昨天终于把折磨我很久的一个关于xpath的bug修复了。在此把坑说明一下。chrome浏览器按F12之后对源码右击选择Copy-&amp;gt;Xpath即可获取某部分的Xpath路径（详见我的上一篇文章）。然而F12得到的源码并非真正的源码，真正的源码与F12得到的源码不一定相同。真正的源码可通过右击网页-&amp;gt;查看网页源代码获取。举个例子，要爬取某个nvd页面的标题“CVE-20">
 <meta property="og:updated_time" content="2019-01-25T05:28:34.689Z">
@@ -109,7 +109,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/01/25/Keng-of-Xpath/">
+  <link rel="canonical" href="https://hungryfoolou.github.io/2019/01/25/Keng-of-Xpath/">
 
 
 
@@ -1990,7 +1990,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a40aff;
+  background: #182685;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3437,7 +3437,7 @@ ul.breadcrumb li+li:last-child {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/25/Keng-of-Xpath/">
+    <link itemprop="mainEntityOfPage" href="https://hungryfoolou.github.io/2019/01/25/Keng-of-Xpath/">
 
     <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="圈亮">
@@ -3538,7 +3538,7 @@ ul.breadcrumb li+li:last-child {
       
 
       
-        <h2 id="坑-of-Xpath"><a href="#坑-of-Xpath" class="headerlink" title="坑 of Xpath"></a>坑 of Xpath</h2><p>昨天终于把折磨我很久的一个关于xpath的bug修复了。在此把坑说明一下。<br>chrome浏览器按F12之后对源码右击选择Copy-&gt;Xpath即可获取某部分的Xpath路径（<a href="https://hungryfoolou.github.io/2018/12/18/A-easy-way-to-get-XPath/" target="_blank" rel="external">详见我的上一篇文章</a>）。然而F12得到的源码并非真正的源码，真正的源码与F12得到的源码不一定相同。真正的源码可通过右击网页-&gt;查看网页源代码获取。<br>举个例子，要爬取<a href="https://nvd.nist.gov/vuln/detail/CVE-2006-4206" target="_blank" rel="external">某个nvd页面</a>的标题“CVE-2006-4206 Detail”，通过F12得到的XPath为<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">//*[@id="p_lt_WebPartZone1_zoneCenter_pageplaceholder_p_lt_WebPartZone1_zoneCenter_VulnerabilityDetail_VulnFormView"]/tbody/tr/td/h2</div></pre></td></tr></tbody></table></figure><p></p>
+        <h2 id="坑-of-Xpath"><a href="#坑-of-Xpath" class="headerlink" title="坑 of Xpath"></a>坑 of Xpath</h2><p>昨天终于把折磨我很久的一个关于xpath的bug修复了。在此把坑说明一下。<br>chrome浏览器按F12之后对源码右击选择Copy-&gt;Xpath即可获取某部分的Xpath路径（<a href="https://hungryfoolou.github.io/2018/12/18/A-easy-way-to-get-XPath/">详见我的上一篇文章</a>）。然而F12得到的源码并非真正的源码，真正的源码与F12得到的源码不一定相同。真正的源码可通过右击网页-&gt;查看网页源代码获取。<br>举个例子，要爬取<a href="https://nvd.nist.gov/vuln/detail/CVE-2006-4206" target="_blank" rel="external">某个nvd页面</a>的标题“CVE-2006-4206 Detail”，通过F12得到的XPath为<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">//*[@id="p_lt_WebPartZone1_zoneCenter_pageplaceholder_p_lt_WebPartZone1_zoneCenter_VulnerabilityDetail_VulnFormView"]/tbody/tr/td/h2</div></pre></td></tr></tbody></table></figure><p></p>
 <p>而查看网页源代码发现真正的XPath为<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">//*[@id="p_lt_WebPartZone1_zoneCenter_pageplaceholder_p_lt_WebPartZone1_zoneCenter_VulnerabilityDetail_VulnFormView"]/tr/td/h2</div></pre></td></tr></tbody></table></figure><p></p>
 <p>该xpath值比上一个的xpath值少了’tbody’</p>
 <h2 id="坑的规律"><a href="#坑的规律" class="headerlink" title="坑的规律"></a>坑的规律</h2><p>包含tbody的xpath通常会解析错误，即F12得到的xpath包含’tbody’而实际xpath并不包含’tbody’，就像上个例子，解决方法：把’tbody’去掉即可。</p>
