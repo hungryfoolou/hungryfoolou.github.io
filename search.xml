@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[文章标题可以超过50个字符了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了]]></title>
     <url>%2F2019%2F04%2F21%2F%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98%E5%8F%AF%E4%BB%A5%E8%B6%85%E8%BF%8750%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%2F</url>
-    <content type="text"><![CDATA[标题可以超过50个字符了哈哈哈，之前起文章标题总是起英文名，总怕起中文名一不小心就超过50个字符了，后来发现英文的文章标题也容易超过50个字符，解决办法: Hexo NexT使用Gitalk未找到相关的Issues进行评论Error:Validation Failed，部分文章的评论区会报Error: Validation Failed,具体原因是由于 Github 限制 labal 长度不能超过 50引起的，解决方法是通过MD5加密ID来缩短label长度。 放一个视频kinjaz超酷舞蹈]]></content>
+    <content type="text"><![CDATA[标题可以超过50个字符了哈哈哈，之前起文章标题总是起英文名，总怕起中文名一不小心就超过50个字符了，后来发现英文的文章标题也容易超过50个字符，解决办法: Hexo NexT使用Gitalk未找到相关的Issues进行评论Error:Validation Failed，部分文章的评论区会报Error: Validation Failed,具体原因是由于 Github 限制 label 长度不能超过 50引起的，解决方法是通过MD5加密ID来缩短label长度。 放一个视频kinjaz超酷舞蹈]]></content>
       <categories>
         <category>Diary</category>
       </categories>
