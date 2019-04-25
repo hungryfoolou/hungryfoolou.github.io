@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[如何使用循环修改python的字典中的数据]]></title>
+    <url>%2F2019%2F04%2F25%2F%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AA%E7%8E%AF%E4%BF%AE%E6%94%B9python%E7%9A%84%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%2F</url>
+    <content type="text"><![CDATA[Question Description不能通过如下for循环修改字典中的数据，因为修改后for循环需要遍历的数据就变化了，对于python的for循环这是不允许的。如果要实现的功能是：如果字典的键为’sb’，则把字典中的这个键值对去掉。比如不能像下面这样修改：123for tmp_i in dict: if dict[tmp_i]=='sb': del dict[tmp_i] Solution可以使用while循环来修改数据，但是需要先将字典的键变为list，使得方便迭代。1234567for tmp_i in dict:tmp_i = 0while tmp_i &lt; len(dict): if dict[dict[tmp_i]] == 'sb': del dict[dict[tmp_i]] tmp_i = tmp_i + 1]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[文章标题可以超过50个字符了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了]]></title>
     <url>%2F2019%2F04%2F21%2F%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98%E5%8F%AF%E4%BB%A5%E8%B6%85%E8%BF%8750%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%E4%BA%86%2F</url>
     <content type="text"><![CDATA[标题可以超过50个字符了哈哈哈，之前起文章标题总是起英文名，总怕起中文名一不小心就超过50个字符了，后来发现英文的文章标题也容易超过50个字符，解决办法: Hexo NexT使用Gitalk未找到相关的Issues进行评论Error:Validation Failed，部分文章的评论区会报Error: Validation Failed,具体原因是由于 Github 限制 label 长度不能超过 50引起的，解决方法是通过MD5加密ID来缩短label长度。 放一个视频kinjaz超酷舞蹈]]></content>
