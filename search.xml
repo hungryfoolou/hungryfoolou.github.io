@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[如何使用循环修改python的字典中的数据]]></title>
     <url>%2F2019%2F04%2F25%2F%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%BE%AA%E7%8E%AF%E4%BF%AE%E6%94%B9python%E7%9A%84%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%2F</url>
-    <content type="text"><![CDATA[Question Description不能通过如下for循环修改字典中的数据，因为修改后for循环需要遍历的数据就变化了，对于python的for循环这是不允许的。如果要实现的功能是：如果字典的键为’sb’，则把字典中的这个键值对去掉。比如不能像下面这样修改：123for tmp_i in dict: if dict[tmp_i]=='sb': del dict[tmp_i] Solution可以使用while循环来修改数据，但是需要先将字典的键变为list，使得方便迭代。1234567for tmp_i in dict:tmp_i = 0while tmp_i &lt; len(dict): if dict[dict[tmp_i]] == 'sb': del dict[dict[tmp_i]] tmp_i = tmp_i + 1]]></content>
+    <content type="text"><![CDATA[Question Description不能通过如下for循环修改字典中的数据，因为修改后for循环需要遍历的数据就变化了，对于python的for循环这是不允许的。如果要实现的功能是：如果字典dict的键为’sb’，则把字典中的这个键值对去掉。比如不能像下面这样删除键值对：123for tmp_i in dict: if dict[tmp_i]=='sb': del dict[tmp_i] Solution可以使用while循环来修改数据，但是需要先将字典的键变为list，使得方便迭代。123456tmp_i = 0list_sb = list(dict.keys())while tmp_i &lt; len(list_sb): if dict[dict[tmp_i]] == 'sb': del dict[dict[tmp_i]] tmp_i = tmp_i + 1]]></content>
       <categories>
         <category>Python</category>
       </categories>

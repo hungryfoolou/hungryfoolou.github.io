@@ -108,19 +108,16 @@
 
 
 
-  <meta name="description" content="Question Description不能通过如下for循环修改字典中的数据，因为修改后for循环需要遍历的数据就变化了，对于python的for循环这是不允许的。如果要实现的功能是：如果字典的键为’sb’，则把字典中的这个键值对去掉。比如不能像下面这样修改：123for tmp_i in dict:    if dict[tmp_i]==&apos;sb&apos;:    del dict[tmp_i]
-Sol">
+  <meta name="description" content="Question Description不能通过如下for循环修改字典中的数据，因为修改后for循环需要遍历的数据就变化了，对于python的for循环这是不允许的。如果要实现的功能是：如果字典dict的键为’sb’，则把字典中的这个键值对去掉。比如不能像下面这样删除键值对：123for tmp_i in dict:    if dict[tmp_i]==&apos;sb&apos;:    del dict[tmp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何使用循环修改python的字典中的数据">
 <meta property="og:url" content="https://hungryfoolou.github.io/2019/04/25/如何使用循环修改python的字典中的数据/index.html">
 <meta property="og:site_name" content="圈亮的博客">
-<meta property="og:description" content="Question Description不能通过如下for循环修改字典中的数据，因为修改后for循环需要遍历的数据就变化了，对于python的for循环这是不允许的。如果要实现的功能是：如果字典的键为’sb’，则把字典中的这个键值对去掉。比如不能像下面这样修改：123for tmp_i in dict:    if dict[tmp_i]==&apos;sb&apos;:    del dict[tmp_i]
-Sol">
-<meta property="og:updated_time" content="2019-04-25T13:54:47.021Z">
+<meta property="og:description" content="Question Description不能通过如下for循环修改字典中的数据，因为修改后for循环需要遍历的数据就变化了，对于python的for循环这是不允许的。如果要实现的功能是：如果字典dict的键为’sb’，则把字典中的这个键值对去掉。比如不能像下面这样删除键值对：123for tmp_i in dict:    if dict[tmp_i]==&apos;sb&apos;:    del dict[tmp">
+<meta property="og:updated_time" content="2019-04-27T07:36:03.322Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何使用循环修改python的字典中的数据">
-<meta name="twitter:description" content="Question Description不能通过如下for循环修改字典中的数据，因为修改后for循环需要遍历的数据就变化了，对于python的for循环这是不允许的。如果要实现的功能是：如果字典的键为’sb’，则把字典中的这个键值对去掉。比如不能像下面这样修改：123for tmp_i in dict:    if dict[tmp_i]==&apos;sb&apos;:    del dict[tmp_i]
-Sol">
+<meta name="twitter:description" content="Question Description不能通过如下for循环修改字典中的数据，因为修改后for循环需要遍历的数据就变化了，对于python的for循环这是不允许的。如果要实现的功能是：如果字典dict的键为’sb’，则把字典中的这个键值对去掉。比如不能像下面这样删除键值对：123for tmp_i in dict:    if dict[tmp_i]==&apos;sb&apos;:    del dict[tmp">
 
 
 
@@ -385,12 +382,24 @@ Sol">
                 
               
 
-              <time title="创建时间：2019-04-25 21:45:45 / 修改时间：21:54:47" itemprop="dateCreated datePublished" datetime="2019-04-25T21:45:45+08:00">2019-04-25</time>
+              <time title="创建时间：2019-04-25 21:45:45" itemprop="dateCreated datePublished" datetime="2019-04-25T21:45:45+08:00">2019-04-25</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-27 15:36:03" itemprop="dateModified" datetime="2019-04-27T15:36:03+08:00">2019-04-27</time>
               
             
           </span>
@@ -444,8 +453,8 @@ Sol">
       
 
       
-        <h2 id="Question-Description"><a href="#Question-Description" class="headerlink" title="Question Description"></a>Question Description</h2><p>不能通过如下for循环修改字典中的数据，因为修改后for循环需要遍历的数据就变化了，对于python的for循环这是不允许的。如果要实现的功能是：如果字典的键为’sb’，则把字典中的这个键值对去掉。比如不能像下面这样修改：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> tmp_i <span class="keyword">in</span> dict:</div><div class="line">    <span class="keyword">if</span> dict[tmp_i]==<span class="string">'sb'</span>:</div><div class="line">    <span class="keyword">del</span> dict[tmp_i]</div></pre></td></tr></table></figure></p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>可以使用while循环来修改数据，但是需要先将字典的键变为list，使得方便迭代。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">for</span> tmp_i <span class="keyword">in</span> dict:</div><div class="line">tmp_i = <span class="number">0</span></div><div class="line"><span class="keyword">while</span> tmp_i &lt; len(dict):</div><div class="line">    <span class="keyword">if</span> dict[dict[tmp_i]] == <span class="string">'sb'</span>:</div><div class="line">        <span class="keyword">del</span> dict[dict[tmp_i]]</div><div class="line">    tmp_i = tmp_i + <span class="number">1</span></div></pre></td></tr></table></figure></p>
+        <h2 id="Question-Description"><a href="#Question-Description" class="headerlink" title="Question Description"></a>Question Description</h2><p>不能通过如下for循环修改字典中的数据，因为修改后for循环需要遍历的数据就变化了，对于python的for循环这是不允许的。如果要实现的功能是：如果字典dict的键为’sb’，则把字典中的这个键值对去掉。比如不能像下面这样删除键值对：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> tmp_i <span class="keyword">in</span> dict:</div><div class="line">    <span class="keyword">if</span> dict[tmp_i]==<span class="string">'sb'</span>:</div><div class="line">    <span class="keyword">del</span> dict[tmp_i]</div></pre></td></tr></table></figure></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>可以使用while循环来修改数据，但是需要先将字典的键变为list，使得方便迭代。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">tmp_i = <span class="number">0</span></div><div class="line">list_sb = list(dict.keys())</div><div class="line"><span class="keyword">while</span> tmp_i &lt; len(list_sb):</div><div class="line">    <span class="keyword">if</span> dict[dict[tmp_i]] == <span class="string">'sb'</span>:</div><div class="line">        <span class="keyword">del</span> dict[dict[tmp_i]]</div><div class="line">    tmp_i = tmp_i + <span class="number">1</span></div></pre></td></tr></table></figure></p>
 
       
     </div>
