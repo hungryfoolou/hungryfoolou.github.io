@@ -340,6 +340,171 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hungryfoolou.github.io/2019/05/05/python的list中去掉重复元素/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="圈亮">
+      <meta itemprop="description" content="Day Day Up">
+      <meta itemprop="image" content="/images/dog.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="圈亮的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/05/python的list中去掉重复元素/" itemprop="url">
+                  python的list中去掉重复元素
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-05 18:57:31 / 修改时间：19:05:50" itemprop="dateCreated datePublished" datetime="2019-05-05T18:57:31+08:00">2019-05-05</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+
+        
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Question-Description"><a href="#Question-Description" class="headerlink" title="Question Description"></a>Question Description</h2><p>网上查询到去掉list中的重复元素的主流方法为使用<code>set()</code>来去重，即<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">list_before = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>]</div><div class="line">list_after = list(set(list_before))</div></pre></td></tr></table></figure></p>
+<p>这样得到的<code>list_after</code>为[1,2,3]，但是如果list_before里包括list，比如<code>list_before = [1,2,[3],[3]]</code>还用上述方法的话就会报错：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">TypeError: unhashable type: <span class="string">'list'</span></div></pre></td></tr></table></figure></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>用简单的两个for循环即可解决该问题。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">list_before = [<span class="number">1</span>,<span class="number">2</span>,[<span class="number">3</span>],[<span class="number">3</span>]]</div><div class="line">after_before = []</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> list_before:</div><div class="line">        <span class="keyword">if</span> i <span class="keyword">not</span> <span class="keyword">in</span> after_before:</div><div class="line">            after_before.append(i)</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://hungryfoolou.github.io/2019/05/05/易上手的字幕制作软件ArcTime/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -386,7 +551,7 @@
                 
               
 
-              <time title="创建时间：2019-05-05 09:58:06 / 修改时间：13:22:40" itemprop="dateCreated datePublished" datetime="2019-05-05T09:58:06+08:00">2019-05-05</time>
+              <time title="创建时间：2019-05-05 09:58:06 / 修改时间：13:24:43" itemprop="dateCreated datePublished" datetime="2019-05-05T09:58:06+08:00">2019-05-05</time>
             
 
             
@@ -450,7 +615,7 @@
             <h2 id="ArcTime简介"><a href="#ArcTime简介" class="headerlink" title="ArcTime简介"></a>ArcTime简介</h2><p>由于英语课程跨文化交际要做一个小组作业，我负责找视频，然而下载的字幕有些问题，正好自己也想学习一下字幕编辑的相关知识，在<a href="https://www.zhihu.com/question/21406655/answer/130686387" target="_blank" rel="external">知乎</a>上了解到<a href="http://arctime.org/" target="_blank" rel="external">ArcTime</a>这个易用的软件。你看<a href="http://arctime.org/guide.html" target="_blank" rel="external">使用教程</a>就会发现这个软件对新手是真的友好。</p>
 <h2 id="编辑视频完整的步骤"><a href="#编辑视频完整的步骤" class="headerlink" title="编辑视频完整的步骤"></a>编辑视频完整的步骤</h2><p>我使用ArcTime编辑视频字幕一般会通过下面几个步骤：</p>
 <ol>
-<li>在youtube寻找视频</li>
+<li>在<a href="https://www.youtube.com/" target="_blank" rel="external">youtube</a>寻找视频</li>
 <li>在<a href="https://www.clipconverter.cc/" target="_blank" rel="external">clipconverter</a>下载寻找到的视频</li>
 <li>在<a href="http://downsub.com/" target="_blank" rel="external">downsub</a>下载字幕</li>
 <li>修改字幕<br>（1）修改srt字幕文件后缀为txt；<br>（2）用ArcTime打开txt，点击右中部的铅笔按钮来修改。或者打开Sublime text，按ctrl+h，点击左下角的”Aa”左边的”Regular expression”，在”Find What”中输入<code>&lt;([^&lt;&gt;]*)&gt;</code>，在”Replce With”中输入一个空格符，然后再通过类似的操作把&gt;=2个的换行符替换为一个换行符，&gt;=2个的空格替换为一个空格，即”\n{2,}”替换为”\n”，把” {2,}”替换为” “（{2,}前面有一个空格，而且不包括双引号）<br>（3）每一行文字对应一个字幕块，过短的行可以和上一行或下一行合并为同一行。过长的行修改为两行或者可以先暂时不管，后来在ArcTime中通过插入新轨道（点击软件左下角的加号），这样就可以显示在视频中一次显示多行文字；<br>（4）修改错别字和错误的标点符号；<br>（5）寻找英文字母的第一个单词，首字母改为大写；<br>（6）把每行英文字母的第一个单词前的空格去掉。</li>
@@ -1961,190 +2126,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hungryfoolou.github.io/2019/02/28/Mom-s-birthday-of-2019/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="圈亮">
-      <meta itemprop="description" content="Day Day Up">
-      <meta itemprop="image" content="/images/dog.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="圈亮的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/28/Mom-s-birthday-of-2019/" itemprop="url">
-                  Mom's birthday of 2019
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-02-28 09:49:39" itemprop="dateCreated datePublished" datetime="2019-02-28T09:49:39+08:00">2019-02-28</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-20 20:06:07" itemprop="dateModified" datetime="2019-04-20T20:06:07+08:00">2019-04-20</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Diary/" itemprop="url" rel="index"><span itemprop="name">Diary</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-
-        
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="妈妈生日快乐"><a href="#妈妈生日快乐" class="headerlink" title="妈妈生日快乐^_^"></a>妈妈生日快乐^_^</h3><p>昨天是妈妈的生日，客厅的气球等饰品美丽地凸显出了生日主题。昨日过生的除了还有两个亲戚外(一个是胡姑爷，一个是唐敏的表姐/妹李清清)，还有本科同学冯叶，她说她已知的还有四五个也是在昨日过生。昨天可真是个幸福的日子。<br>上图（高清照片，加载较慢）：<br>1.</p>
-<ul>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/Mom-s-birthday-of-2019/1.jpg" alt="photo1"><br>2.</li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/Mom-s-birthday-of-2019/2.jpg" alt="photo2"><br>3.</li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/Mom-s-birthday-of-2019/3.jpg" alt="photo3"><br>4.</li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/Mom-s-birthday-of-2019/4.jpg" alt="photo4"><br>5.</li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/Mom-s-birthday-of-2019/5.jpg" alt="photo5"><br>6.</li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/Mom-s-birthday-of-2019/6.jpg" alt="photo6"><br>7.</li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/Mom-s-birthday-of-2019/7.jpg" alt="photo7"></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2196,7 +2177,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

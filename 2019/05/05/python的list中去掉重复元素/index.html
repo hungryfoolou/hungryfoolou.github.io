@@ -108,23 +108,26 @@
 
 
 
-  <meta name="description" content="Question Description不能通过如下for循环修改字典中的数据，因为修改后for循环需要遍历的数据就变化了，对于python的for循环这是不允许的。如果要实现的功能是：如果字典dict的键为’sb’，则把字典中的这个键值对去掉。比如不能像下面这样删除键值对：123for tmp_i in dict:    if dict[tmp_i]==&apos;sb&apos;:    del dict[tmp">
+  <meta name="description" content="Question Description网上查询到去掉list中的重复元素的主流方法为使用set()来去重，即12list_before = [1,2,3,1]list_after = list(set(list_before))
+这样得到的list_after为[1,2,3]，但是如果list_before里包括list，比如list_before = [1,2,[3],[3]]还用上述方法的话">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何使用循环修改python的字典中的数据">
-<meta property="og:url" content="https://hungryfoolou.github.io/2019/04/25/如何使用循环修改python的字典中的数据/index.html">
+<meta property="og:title" content="python的list中去掉重复元素">
+<meta property="og:url" content="https://hungryfoolou.github.io/2019/05/05/python的list中去掉重复元素/index.html">
 <meta property="og:site_name" content="圈亮的博客">
-<meta property="og:description" content="Question Description不能通过如下for循环修改字典中的数据，因为修改后for循环需要遍历的数据就变化了，对于python的for循环这是不允许的。如果要实现的功能是：如果字典dict的键为’sb’，则把字典中的这个键值对去掉。比如不能像下面这样删除键值对：123for tmp_i in dict:    if dict[tmp_i]==&apos;sb&apos;:    del dict[tmp">
-<meta property="og:updated_time" content="2019-05-05T02:46:14.982Z">
+<meta property="og:description" content="Question Description网上查询到去掉list中的重复元素的主流方法为使用set()来去重，即12list_before = [1,2,3,1]list_after = list(set(list_before))
+这样得到的list_after为[1,2,3]，但是如果list_before里包括list，比如list_before = [1,2,[3],[3]]还用上述方法的话">
+<meta property="og:updated_time" content="2019-05-05T11:05:50.986Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何使用循环修改python的字典中的数据">
-<meta name="twitter:description" content="Question Description不能通过如下for循环修改字典中的数据，因为修改后for循环需要遍历的数据就变化了，对于python的for循环这是不允许的。如果要实现的功能是：如果字典dict的键为’sb’，则把字典中的这个键值对去掉。比如不能像下面这样删除键值对：123for tmp_i in dict:    if dict[tmp_i]==&apos;sb&apos;:    del dict[tmp">
+<meta name="twitter:title" content="python的list中去掉重复元素">
+<meta name="twitter:description" content="Question Description网上查询到去掉list中的重复元素的主流方法为使用set()来去重，即12list_before = [1,2,3,1]list_after = list(set(list_before))
+这样得到的list_after为[1,2,3]，但是如果list_before里包括list，比如list_before = [1,2,[3],[3]]还用上述方法的话">
 
 
 
 
 
 
-  <link rel="canonical" href="https://hungryfoolou.github.io/2019/04/25/如何使用循环修改python的字典中的数据/"/>
+  <link rel="canonical" href="https://hungryfoolou.github.io/2019/05/05/python的list中去掉重复元素/"/>
 
 
 
@@ -134,7 +137,7 @@
   };
 </script>
 
-  <title>如何使用循环修改python的字典中的数据 | 圈亮的博客</title>
+  <title>python的list中去掉重复元素 | 圈亮的博客</title>
   
 
 
@@ -340,7 +343,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hungryfoolou.github.io/2019/04/25/如何使用循环修改python的字典中的数据/">
+    <link itemprop="mainEntityOfPage" href="https://hungryfoolou.github.io/2019/05/05/python的list中去掉重复元素/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="圈亮">
@@ -357,7 +360,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">如何使用循环修改python的字典中的数据
+          <h1 class="post-title" itemprop="name headline">python的list中去掉重复元素
               
             
           </h1>
@@ -382,24 +385,12 @@
                 
               
 
-              <time title="创建时间：2019-04-25 21:45:45" itemprop="dateCreated datePublished" datetime="2019-04-25T21:45:45+08:00">2019-04-25</time>
+              <time title="创建时间：2019-05-05 18:57:31 / 修改时间：19:05:50" itemprop="dateCreated datePublished" datetime="2019-05-05T18:57:31+08:00">2019-05-05</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-05 10:46:14" itemprop="dateModified" datetime="2019-05-05T10:46:14+08:00">2019-05-05</time>
               
             
           </span>
@@ -453,8 +444,9 @@
       
 
       
-        <h2 id="Question-Description"><a href="#Question-Description" class="headerlink" title="Question Description"></a>Question Description</h2><p>不能通过如下for循环修改字典中的数据，因为修改后for循环需要遍历的数据就变化了，对于python的for循环这是不允许的。如果要实现的功能是：如果字典dict的键为’sb’，则把字典中的这个键值对去掉。比如不能像下面这样删除键值对：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> tmp_i <span class="keyword">in</span> dict:</div><div class="line">    <span class="keyword">if</span> dict[tmp_i]==<span class="string">'sb'</span>:</div><div class="line">    <span class="keyword">del</span> dict[tmp_i]</div></pre></td></tr></table></figure></p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>可以使用while循环来修改数据，但是需要先将字典的键变为list，使得方便迭代。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">tmp_i = <span class="number">0</span></div><div class="line">list_sb = list(dict.keys())</div><div class="line"><span class="keyword">while</span> tmp_i &lt; len(list_sb):</div><div class="line">    <span class="keyword">if</span> dict[dict[tmp_i]] == <span class="string">'sb'</span>:</div><div class="line">        <span class="keyword">del</span> dict[dict[tmp_i]]</div><div class="line">    tmp_i = tmp_i + <span class="number">1</span></div></pre></td></tr></table></figure></p>
+        <h2 id="Question-Description"><a href="#Question-Description" class="headerlink" title="Question Description"></a>Question Description</h2><p>网上查询到去掉list中的重复元素的主流方法为使用<code>set()</code>来去重，即<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">list_before = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>]</div><div class="line">list_after = list(set(list_before))</div></pre></td></tr></table></figure></p>
+<p>这样得到的<code>list_after</code>为[1,2,3]，但是如果list_before里包括list，比如<code>list_before = [1,2,[3],[3]]</code>还用上述方法的话就会报错：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">TypeError: unhashable type: <span class="string">'list'</span></div></pre></td></tr></table></figure></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>用简单的两个for循环即可解决该问题。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">list_before = [<span class="number">1</span>,<span class="number">2</span>,[<span class="number">3</span>],[<span class="number">3</span>]]</div><div class="line">after_before = []</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> list_before:</div><div class="line">        <span class="keyword">if</span> i <span class="keyword">not</span> <span class="keyword">in</span> after_before:</div><div class="line">            after_before.append(i)</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -491,8 +483,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/21/文章标题可以超过50个字符了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了/" rel="next" title="文章标题可以超过50个字符了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了">
-                <i class="fa fa-chevron-left"></i> 文章标题可以超过50个字符了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了
+              <a href="/2019/05/05/易上手的字幕制作软件ArcTime/" rel="next" title="易上手的字幕制作软件ArcTime">
+                <i class="fa fa-chevron-left"></i> 易上手的字幕制作软件ArcTime
               </a>
             
           </div>
@@ -500,10 +492,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/05/易上手的字幕制作软件ArcTime/" rel="prev" title="易上手的字幕制作软件ArcTime">
-                易上手的字幕制作软件ArcTime <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
