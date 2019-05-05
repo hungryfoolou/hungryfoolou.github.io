@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="圈亮的博客">
 <meta property="og:description" content="Question Description网上查询到去掉list中的重复元素的主流方法为使用set()来去重，即12list_before = [1,2,3,1]list_after = list(set(list_before))
 这样得到的list_after为[1,2,3]，但是如果list_before里包括list，比如list_before = [1,2,[3],[3]]还用上述方法的话">
-<meta property="og:updated_time" content="2019-05-05T11:05:50.986Z">
+<meta property="og:updated_time" content="2019-05-05T11:13:22.330Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python的list中去掉重复元素">
 <meta name="twitter:description" content="Question Description网上查询到去掉list中的重复元素的主流方法为使用set()来去重，即12list_before = [1,2,3,1]list_after = list(set(list_before))
@@ -385,7 +385,7 @@
                 
               
 
-              <time title="创建时间：2019-05-05 18:57:31 / 修改时间：19:05:50" itemprop="dateCreated datePublished" datetime="2019-05-05T18:57:31+08:00">2019-05-05</time>
+              <time title="创建时间：2019-05-05 18:57:31 / 修改时间：19:13:22" itemprop="dateCreated datePublished" datetime="2019-05-05T18:57:31+08:00">2019-05-05</time>
             
 
             
@@ -446,7 +446,8 @@
       
         <h2 id="Question-Description"><a href="#Question-Description" class="headerlink" title="Question Description"></a>Question Description</h2><p>网上查询到去掉list中的重复元素的主流方法为使用<code>set()</code>来去重，即<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">list_before = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>]</div><div class="line">list_after = list(set(list_before))</div></pre></td></tr></table></figure></p>
 <p>这样得到的<code>list_after</code>为[1,2,3]，但是如果list_before里包括list，比如<code>list_before = [1,2,[3],[3]]</code>还用上述方法的话就会报错：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">TypeError: unhashable type: <span class="string">'list'</span></div></pre></td></tr></table></figure></p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>用简单的两个for循环即可解决该问题。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">list_before = [<span class="number">1</span>,<span class="number">2</span>,[<span class="number">3</span>],[<span class="number">3</span>]]</div><div class="line">after_before = []</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> list_before:</div><div class="line">        <span class="keyword">if</span> i <span class="keyword">not</span> <span class="keyword">in</span> after_before:</div><div class="line">            after_before.append(i)</div></pre></td></tr></table></figure></p>
+<p>错误为：list是不能哈希的</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>用简单的两个for循环即可解决该问题。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">list_before = [<span class="number">1</span>,<span class="number">2</span>,[<span class="number">3</span>],[<span class="number">3</span>]]</div><div class="line">after_before = []</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> list_before:</div><div class="line">    <span class="keyword">if</span> i <span class="keyword">not</span> <span class="keyword">in</span> after_before:</div><div class="line">        after_before.append(i)</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -492,6 +493,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/05/python之深拷贝/" rel="prev" title="python之深拷贝">
+                python之深拷贝 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -567,7 +572,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-count">26</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

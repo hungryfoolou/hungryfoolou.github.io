@@ -340,6 +340,172 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hungryfoolou.github.io/2019/05/05/python之深拷贝/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="圈亮">
+      <meta itemprop="description" content="Day Day Up">
+      <meta itemprop="image" content="/images/dog.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="圈亮的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/05/python之深拷贝/" itemprop="url">
+                  python之深拷贝
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-05 22:10:59 / 修改时间：22:20:39" itemprop="dateCreated datePublished" datetime="2019-05-05T22:10:59+08:00">2019-05-05</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+
+        
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h2><p>今天写了好多bug，12号就要提交成果了，有点慌，记录一下写代码遇到的问题。</p>
+<h2 id="Question-Description"><a href="#Question-Description" class="headerlink" title="Question Description"></a>Question Description</h2><p>字典赋值给两个变量,当我们修改其中一个变量的值时，另一个变量的值也会改变，我们的目的是不想改变另一个变量的值。<br>举例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">dict_first = &#123;‘<span class="number">1</span>’：<span class="string">'sx'</span>&#125;  </div><div class="line">cnnvd_origin_soft = dict_first   <span class="comment"># 直接赋值</span></div><div class="line">cnnvd_overall_soft = dict_first</div><div class="line">cnnvd_overall_soft[<span class="string">'soft'</span>] = dict()  <span class="comment"># 会使得cnnvd_origin_soft也添加了键'soft'</span></div><div class="line">cnnvd_overall_soft[<span class="string">'soft'</span>] = cnnvd_origin_soft  <span class="comment"># 把原来的值装到“子键”soft中</span></div></pre></td></tr></table></figure></p>
+<p>这样会导致赋值错误</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>用深拷贝可解决该问题。深拷贝可参考<a href="https://www.cnblogs.com/yunweixiaoxuesheng/p/8303426.html" target="_blank" rel="external">Python-字典引用赋值变量之发现</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">dict_first = &#123;‘<span class="number">1</span>’：<span class="string">'sx'</span>&#125;  </div><div class="line">cnnvd_origin_soft = copy.deepcopy(dict_first)   <span class="comment"># 深拷贝</span></div><div class="line">cnnvd_overall_soft = dict_first</div><div class="line">cnnvd_overall_soft[<span class="string">'soft'</span>] = dict()  <span class="comment"># 不会使得cnnvd_origin_soft也添加了键'soft'</span></div><div class="line">cnnvd_overall_soft[<span class="string">'soft'</span>] = cnnvd_origin_soft  <span class="comment"># 把原来的值装到“子键”soft中</span></div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://hungryfoolou.github.io/2019/05/05/python的list中去掉重复元素/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -386,7 +552,7 @@
                 
               
 
-              <time title="创建时间：2019-05-05 18:57:31 / 修改时间：19:05:50" itemprop="dateCreated datePublished" datetime="2019-05-05T18:57:31+08:00">2019-05-05</time>
+              <time title="创建时间：2019-05-05 18:57:31 / 修改时间：19:13:22" itemprop="dateCreated datePublished" datetime="2019-05-05T18:57:31+08:00">2019-05-05</time>
             
 
             
@@ -449,7 +615,8 @@
           
             <h2 id="Question-Description"><a href="#Question-Description" class="headerlink" title="Question Description"></a>Question Description</h2><p>网上查询到去掉list中的重复元素的主流方法为使用<code>set()</code>来去重，即<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">list_before = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>]</div><div class="line">list_after = list(set(list_before))</div></pre></td></tr></table></figure></p>
 <p>这样得到的<code>list_after</code>为[1,2,3]，但是如果list_before里包括list，比如<code>list_before = [1,2,[3],[3]]</code>还用上述方法的话就会报错：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">TypeError: unhashable type: <span class="string">'list'</span></div></pre></td></tr></table></figure></p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>用简单的两个for循环即可解决该问题。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">list_before = [<span class="number">1</span>,<span class="number">2</span>,[<span class="number">3</span>],[<span class="number">3</span>]]</div><div class="line">after_before = []</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> list_before:</div><div class="line">        <span class="keyword">if</span> i <span class="keyword">not</span> <span class="keyword">in</span> after_before:</div><div class="line">            after_before.append(i)</div></pre></td></tr></table></figure></p>
+<p>错误为：list是不能哈希的</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>用简单的两个for循环即可解决该问题。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">list_before = [<span class="number">1</span>,<span class="number">2</span>,[<span class="number">3</span>],[<span class="number">3</span>]]</div><div class="line">after_before = []</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> list_before:</div><div class="line">    <span class="keyword">if</span> i <span class="keyword">not</span> <span class="keyword">in</span> after_before:</div><div class="line">        after_before.append(i)</div></pre></td></tr></table></figure></p>
 
           
         
@@ -1946,186 +2113,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hungryfoolou.github.io/2019/03/09/why-file-name-of-windows-os-can-t-include-some-characters/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="圈亮">
-      <meta itemprop="description" content="Day Day Up">
-      <meta itemprop="image" content="/images/dog.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="圈亮的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/09/why-file-name-of-windows-os-can-t-include-some-characters/" itemprop="url">
-                  why file name of windows os can't include some characters
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-03-09 16:40:20 / 修改时间：17:36:21" itemprop="dateCreated datePublished" datetime="2019-03-09T16:40:20+08:00">2019-03-09</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/basic-knowledge/" itemprop="url" rel="index"><span itemprop="name">basic knowledge</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-
-        
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>windows7、windows10操作系统的文件夹命名不能包括？：等符号，详细说明见:<a href="https://docs.microsoft.com/zh-cn/previous-versions/s6feh8zw(v=vs.110" target="_blank" rel="external">https://docs.microsoft.com/zh-cn/previous-versions/s6feh8zw(v=vs.110</a>) （完整链接包括最后vs.110右边的括号）</p>
-<p>理由如下：<br>有很多字符在shell中有特殊含义，用在文件名中就会导致错误的解析。<br>除了保留字符外，还有保留字：CON NUL COM1 COM2 LPT1 PRN。<br>例如：move a.txt NUL<br>就相当于 del a.txt</p>
-<p>保留字符：</p>
-<ol>
-<li>\：路径分割符</li>
-<li>/：</li>
-<li>:：盘符</li>
-<li><ul>
-<li>?：通配符</li>
-</ul>
-</li>
-<li>‘ “：字符串</li>
-<li>&lt;&gt; | &amp;：重定向符</li>
-<li>()：</li>
-<li>{}：</li>
-<li>%：变量</li>
-</ol>
-<p>参考：<a href="https://www.guokr.com/question/472108/" target="_blank" rel="external">豆瓣</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2177,7 +2164,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-count">26</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

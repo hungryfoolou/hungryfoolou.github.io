@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python之深拷贝]]></title>
+    <url>%2F2019%2F05%2F05%2Fpython%E4%B9%8B%E6%B7%B1%E6%8B%B7%E8%B4%9D%2F</url>
+    <content type="text"><![CDATA[吐槽今天写了好多bug，12号就要提交成果了，有点慌，记录一下写代码遇到的问题。 Question Description字典赋值给两个变量,当我们修改其中一个变量的值时，另一个变量的值也会改变，我们的目的是不想改变另一个变量的值。举例：12345dict_first = &#123;‘1’：'sx'&#125; cnnvd_origin_soft = dict_first # 直接赋值cnnvd_overall_soft = dict_firstcnnvd_overall_soft['soft'] = dict() # 会使得cnnvd_origin_soft也添加了键'soft'cnnvd_overall_soft['soft'] = cnnvd_origin_soft # 把原来的值装到“子键”soft中 这样会导致赋值错误 Solution用深拷贝可解决该问题。深拷贝可参考Python-字典引用赋值变量之发现12345dict_first = &#123;‘1’：'sx'&#125; cnnvd_origin_soft = copy.deepcopy(dict_first) # 深拷贝cnnvd_overall_soft = dict_firstcnnvd_overall_soft['soft'] = dict() # 不会使得cnnvd_origin_soft也添加了键'soft'cnnvd_overall_soft['soft'] = cnnvd_origin_soft # 把原来的值装到“子键”soft中]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[python的list中去掉重复元素]]></title>
     <url>%2F2019%2F05%2F05%2Fpython%E7%9A%84list%E4%B8%AD%E5%8E%BB%E6%8E%89%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0%2F</url>
-    <content type="text"><![CDATA[Question Description网上查询到去掉list中的重复元素的主流方法为使用set()来去重，即12list_before = [1,2,3,1]list_after = list(set(list_before)) 这样得到的list_after为[1,2,3]，但是如果list_before里包括list，比如list_before = [1,2,[3],[3]]还用上述方法的话就会报错：1TypeError: unhashable type: 'list' Solution用简单的两个for循环即可解决该问题。12345list_before = [1,2,[3],[3]]after_before = [] for i in list_before: if i not in after_before: after_before.append(i)]]></content>
+    <content type="text"><![CDATA[Question Description网上查询到去掉list中的重复元素的主流方法为使用set()来去重，即12list_before = [1,2,3,1]list_after = list(set(list_before)) 这样得到的list_after为[1,2,3]，但是如果list_before里包括list，比如list_before = [1,2,[3],[3]]还用上述方法的话就会报错：1TypeError: unhashable type: 'list' 错误为：list是不能哈希的 Solution用简单的两个for循环即可解决该问题。12345list_before = [1,2,[3],[3]]after_before = []for i in list_before: if i not in after_before: after_before.append(i)]]></content>
       <categories>
         <category>Python</category>
       </categories>
