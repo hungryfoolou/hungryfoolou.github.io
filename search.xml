@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[测试在线播放ppt]]></title>
     <url>%2F2019%2F05%2F29%2F%E6%B5%8B%E8%AF%95%E5%9C%A8%E7%BA%BF%E6%92%AD%E6%94%BEppt%2F</url>
-    <content type="text"><![CDATA[在线播放ppt缓冲区溢出攻击实验： 制作网页版ppt使用nodePPT]]></content>
+    <content type="text"><![CDATA[在线播放ppthexo主题的博客需要使用hexo-pdf插件，在hexo博客的node_modules的同级目录安装该插件。可使用Google Drive共享ppt，将ppt上传至google drive之后，右击你想分享的ppt文件，选择“获取共享链接”，将后部分的链接替换为/preview，并插入代码中。 说明：由于是google的产品，所以访问者需科学上网。 示例一：代码：1&#123;% pdf https://drive.google.com/file/d/0B6qSwdwPxPRdTEliX0dhQ2JfUEU/preview %&#125; 实际效果： 示例二：代码：1&#123;% pdf https://drive.google.com/file/d/1MAfzbk-ZE0wCBjgMOa8u4Q_r8MISFt2S/preview %&#125; 实际效果： 制作网页版ppt使用nodePPT]]></content>
       <categories>
         <category>Diary</category>
       </categories>
