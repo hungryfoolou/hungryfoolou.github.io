@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[测试在线播放ppt]]></title>
+    <url>%2F2019%2F05%2F29%2F%E6%B5%8B%E8%AF%95%E5%9C%A8%E7%BA%BF%E6%92%AD%E6%94%BEppt%2F</url>
+    <content type="text"><![CDATA[在线播放ppt缓冲区溢出攻击实验： 制作网页版ppt使用nodePPT]]></content>
+      <categories>
+        <category>Diary</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[python之深拷贝]]></title>
     <url>%2F2019%2F05%2F05%2Fpython%E4%B9%8B%E6%B7%B1%E6%8B%B7%E8%B4%9D%2F</url>
     <content type="text"><![CDATA[吐槽今天写了好多bug，12号就要提交成果了，有点慌，记录一下写代码遇到的问题。 Question Description字典赋值给两个变量,当我们修改其中一个变量的值时，另一个变量的值也会改变，我们的目的是不想改变另一个变量的值。举例：12345dict_first = &#123;‘1’：'sx'&#125; cnnvd_origin_soft = dict_first # 直接赋值cnnvd_overall_soft = dict_firstcnnvd_overall_soft['soft'] = dict() # 会使得cnnvd_origin_soft也添加了键'soft'cnnvd_overall_soft['soft'] = cnnvd_origin_soft # 把原来的值装到“子键”soft中 这样会导致赋值错误 Solution用深拷贝可解决该问题。深拷贝可参考Python-字典引用赋值变量之发现12345dict_first = &#123;‘1’：'sx'&#125; cnnvd_origin_soft = copy.deepcopy(dict_first) # 深拷贝cnnvd_overall_soft = dict_firstcnnvd_overall_soft['soft'] = dict() # 不会使得cnnvd_origin_soft也添加了键'soft'cnnvd_overall_soft['soft'] = cnnvd_origin_soft # 把原来的值装到“子键”soft中]]></content>
@@ -67,7 +75,7 @@
   <entry>
     <title><![CDATA[Import csv format of mysql's data into navicat]]></title>
     <url>%2F2019%2F04%2F11%2FImport-csv-format-of-mysql-s-data-into-navicat%2F</url>
-    <content type="text"><![CDATA[目标想把师兄从mysql导出的cnnvd数据导入navicat中。 问题描述目前有数据的xls格式，用navicat导入xls格式数据时navicat停止了工作 解决方法 先用excel打开xls格式的数据文件，另存为csv格式的数据文件； 用notepad++打开csv格式的文件，选择菜单的编码-&gt;转换为utf-8格式； 在navicat里新建数据库cnnvd，数据库名为cnnvd，字符集为utf8 -- UTF-8 Unicode，排序规则为utf8_general_ci； 在导入向导的第2步选择编码格式为utf-8格式； 在导入向导的第6步，把类型从默认的varchar改为longtext，因为有的属性的值的长度比较大。 感想 为了避免导入数据的格式错误，需保证将要导入的数据和建立的数据库的编码方式相同。 数据一旦变得较大，就容易出现问题，额，希望问题少些。 师兄也给了xml格式的数据文件，没有尝试导入，应该只要编码格式一致就可以导入。]]></content>
+    <content type="text"><![CDATA[目标想把师兄从mysql导出的cnnvd数据导入navicat中。 问题描述目前有数据的xls格式，用navicat导入xls格式数据时navicat停止了工作 解决方法 先用excel打开xls格式的数据文件，另存为csv格式的数据文件； 下面两种方法均可，但是noteapd++转换比较大的文件（&gt;80M的文件）可能会转换失败，优先用方法（1）（1）用sublime打开csv文件，选择菜单栏的File-&gt;Save with Encoding-&gt;UTF-8 With BOM（sublime的UTF-8选项不带BOM，注意别选了UTF-8）（2）用notepad++打开csv文件，选择菜单栏的编码-&gt;转换为uft-8格式（notepad++的该uft-8选项默认带BOM，注意别选了utf-8 without BOM）； 在navicat里新建数据库cnnvd，数据库名为cnnvd，字符集为utf8 -- UTF-8 Unicode，排序规则为utf8_general_ci； 在导入向导的第2步选择编码格式为utf-8格式； 在导入向导的第6步，把类型从默认的varchar改为longtext，因为有的属性的值的长度比较大。 感想 为了避免导入数据的格式错误，需保证将要导入的数据和建立的数据库的编码方式相同。 数据一旦变得较大，就容易出现问题，额，希望问题少些。 师兄也给了xml格式的数据文件，没有尝试导入，应该只要编码格式一致就可以导入。]]></content>
       <categories>
         <category>web crawler</category>
       </categories>
