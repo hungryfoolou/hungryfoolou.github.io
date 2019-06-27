@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[语言真有趣]]></title>
+    <url>%2F2019%2F06%2F27%2F%E8%AF%AD%E8%A8%80%E7%9C%9F%E6%9C%89%E8%B6%A3%2F</url>
+    <content type="text"><![CDATA[抠你鸡娃中学科目里，一直都挺喜欢英语的。最近发现其他外语也很好玩。 入坑视频：]]></content>
+      <categories>
+        <category>Diary</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[测试在线播放ppt]]></title>
     <url>%2F2019%2F05%2F29%2F%E6%B5%8B%E8%AF%95%E5%9C%A8%E7%BA%BF%E6%92%AD%E6%94%BEppt%2F</url>
     <content type="text"><![CDATA[在线播放ppthexo主题的博客需要使用hexo-pdf插件，在hexo博客的node_modules的同级目录安装该插件。可使用Google Drive共享ppt，将ppt上传至google drive之后，右击你想分享的ppt文件，选择“获取共享链接”，将后部分的链接替换为/preview，并插入代码中。 说明：由于是google的产品，所以访问者需科学上网。 示例一：代码：1&#123;% pdf https://drive.google.com/file/d/0B6qSwdwPxPRdTEliX0dhQ2JfUEU/preview %&#125; 实际效果： 示例二：代码：1&#123;% pdf https://drive.google.com/file/d/1MAfzbk-ZE0wCBjgMOa8u4Q_r8MISFt2S/preview %&#125; 实际效果： 制作网页版ppt使用nodePPT]]></content>

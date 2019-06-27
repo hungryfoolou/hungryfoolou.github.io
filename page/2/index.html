@@ -340,6 +340,194 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hungryfoolou.github.io/2019/04/11/Import-csv-format-of-mysql-s-data-into-navicat/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="圈亮">
+      <meta itemprop="description" content="Day Day Up">
+      <meta itemprop="image" content="/images/dog.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="圈亮的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/11/Import-csv-format-of-mysql-s-data-into-navicat/" itemprop="url">
+                  Import csv format of mysql's data into navicat
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-11 16:58:01" itemprop="dateCreated datePublished" datetime="2019-04-11T16:58:01+08:00">2019-04-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-09 14:39:29" itemprop="dateModified" datetime="2019-05-09T14:39:29+08:00">2019-05-09</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/web-crawler/" itemprop="url" rel="index"><span itemprop="name">web crawler</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+
+        
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>想把师兄从mysql导出的cnnvd数据导入navicat中。</p>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>目前有数据的xls格式，用navicat导入xls格式数据时navicat停止了工作</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ol>
+<li>先用excel打开xls格式的数据文件，另存为csv格式的数据文件；</li>
+<li>下面两种方法均可，但是noteapd++转换比较大的文件（&gt;80M的文件）可能会转换失败，优先用方法（1）<br>（1）用sublime打开csv文件，选择菜单栏的File-&gt;Save with Encoding-&gt;UTF-8 With BOM（sublime的UTF-8选项不带BOM，注意别选了UTF-8）<br>（2）用notepad++打开csv文件，选择菜单栏的编码-&gt;转换为uft-8格式（notepad++的该uft-8选项默认带BOM，注意别选了utf-8 without BOM）；</li>
+<li>在navicat里新建数据库cnnvd，数据库名为<code>cnnvd</code>，字符集为<code>utf8 -- UTF-8 Unicode</code>，排序规则为<code>utf8_general_ci</code>；</li>
+<li>在导入向导的第2步选择编码格式为<code>utf-8</code>格式；</li>
+<li>在导入向导的第6步，把类型从默认的varchar改为longtext，因为有的属性的值的长度比较大。</li>
+</ol>
+<h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><ol>
+<li>为了避免导入数据的格式错误，需保证将要导入的数据和建立的数据库的编码方式相同。</li>
+<li>数据一旦变得较大，就容易出现问题，额，希望问题少些。</li>
+<li>师兄也给了xml格式的数据文件，没有尝试导入，应该只要编码格式一致就可以导入。</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://hungryfoolou.github.io/2019/04/10/How-to-install-scarpy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1954,170 +2142,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hungryfoolou.github.io/2018/10/22/pycharm向已有的项目中导入新文件/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="圈亮">
-      <meta itemprop="description" content="Day Day Up">
-      <meta itemprop="image" content="/images/dog.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="圈亮的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/22/pycharm向已有的项目中导入新文件/" itemprop="url">
-                  pycharm向已有的项目中导入新文件
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-10-22 22:18:48 / 修改时间：22:19:24" itemprop="dateCreated datePublished" datetime="2018-10-22T22:18:48+08:00">2018-10-22</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-
-        
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Question-Description"><a href="#Question-Description" class="headerlink" title="Question Description"></a>Question Description</h2><p>用git clone从github下载项目A并用pycharm打开后，向A中加入文件b，pycharm提示b中的很多的”import”是错误的，然而实际可以运行。</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>pycharm不会将当前文件目录自动加入自己的sourse path，对提示错误的文件b右键，make directory as–&gt;sources path。将当前工作的文件夹加入source_path。参考 <a href="https://www.zhihu.com/question/52880389/answer/327757554" target="_blank" rel="external">知乎的回答</a> 。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2169,7 +2193,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
