@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>%2F2019%2F08%2F16%2F%E9%80%9A%E8%BF%87github%E4%B8%8A%E4%BC%A0%E5%A4%A7%E6%96%87%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[title: 通过github上传大文件date: 2019-08-16 19:49:44categories: Python 上传大文件到github右击你想要上传的文件夹，选择git bash，在弹出的窗口中输入以下命令：1git config http.postBuffer 524288000]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[将大文件的xls格式转换为csv格式]]></title>
     <url>%2F2019%2F08%2F16%2F%E5%B0%86%E5%A4%A7%E6%96%87%E4%BB%B6%E7%9A%84xls%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2%E4%B8%BAcsv%E6%A0%BC%E5%BC%8F%2F</url>
-    <content type="text"><![CDATA[Problem Description用excel将大文件的xls格式转换为csv格式时，excel崩溃了 Solution有2种解决办法 增大电脑的虚拟内存，详见参考，具体步骤如下： 进入win10系统桌面，鼠标右键“我的电脑”，选择“属性”打开 在新出现的界面中选择“高级系统设置”打开。 在弹出的界面中点击“高级”，在性能的右下边，选择“设置”打开。 在“性能选项”界面中切换到“高级”，选择“更改”打开。 将虚拟内存界面中的勾去除，选择“自定义”，托管的系统选择C盘。 设置虚拟内存建议最多不超过实际内存的2倍，设置完毕后点击确定，重启系统即可应用设置。 虚拟内存设置大小一般应该为物理内存的1.5倍为好，如果物理内存为2G，虚拟内存应该设置为3G=3072MB，如果物理内存为4G，那虚拟内存应该设置为6G=6144MB。我把内存设置为了8G（最小值）-10G（最大值） 编程 python代码如下：123456def convert_xls_to_csv(): try: data_xls = pd.read_excel("sfo.xls","Sheet1",index_col=None) data_xls.to_csv("test_csv.csv", encoding='utf-8', index=False) except Exception as e: print(e) 然后调用函数convert_xls_to_csv()即可 注意：该方法有局限，如果遇到xls文件中有比较奇怪的数据，比如有”\t”这类符号，就会转换失败 该方法参考自： zhihu csdn1 csdn2]]></content>
+    <content type="text"><![CDATA[Problem Description用excel将大文件的xls格式转换为csv格式时，excel崩溃了 Solution有2种解决办法 1. 增大电脑的虚拟内存，详见参考，具体步骤如下： 进入win10系统桌面，鼠标右键“我的电脑”，选择“属性”打开 在新出现的界面中选择“高级系统设置”打开。 在弹出的界面中点击“高级”，在性能的右下边，选择“设置”打开。 在“性能选项”界面中切换到“高级”，选择“更改”打开。 将虚拟内存界面中的勾去除，选择“自定义”，托管的系统选择C盘。 设置虚拟内存建议最多不超过实际内存的2倍，设置完毕后点击确定，重启系统即可应用设置。 虚拟内存设置大小一般应该为物理内存的1.5倍为好，如果物理内存为2G，虚拟内存应该设置为3G=3072MB，如果物理内存为4G，那虚拟内存应该设置为6G=6144MB。我把内存设置为了8G（最小值）-10G（最大值） 2. 编程 python代码如下，调用函数convert_xls_to_csv()即可 123456def convert_xls_to_csv(): try: data_xls = pd.read_excel("sfo.xls","SheetName",index_col=None) data_xls.to_csv("test_csv.csv", encoding='utf-8', index=False) except Exception as e: print(e) 注意：该方法有局限，如果遇到xls文件中有比较奇怪的数据，比如有&quot;\t&quot;这类符号，就会转换失败 该方法参考自： zhihu csdn1 csdn2]]></content>
       <categories>
         <category>Python</category>
       </categories>
