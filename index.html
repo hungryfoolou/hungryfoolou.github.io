@@ -340,6 +340,361 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hungryfoolou.github.io/2019/08/16/将大文件的xls格式转换为csv格式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="圈亮">
+      <meta itemprop="description" content="Day Day Up">
+      <meta itemprop="image" content="/images/dog.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="圈亮的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/16/将大文件的xls格式转换为csv格式/" itemprop="url">
+                  将大文件的xls格式转换为csv格式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-16 14:47:39 / 修改时间：14:59:01" itemprop="dateCreated datePublished" datetime="2019-08-16T14:47:39+08:00">2019-08-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+
+        
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a>Problem Description</h2><p>用excel将大文件的xls格式转换为csv格式时，excel崩溃了</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>有2种解决办法</p>
+<ol>
+<li>增大电脑的虚拟内存，详见<a href="https://forum.huawei.com/enterprise/zh/thread-315369-1-1.html" target="_blank" rel="external">参考</a>，具体步骤如下：<ol>
+<li>进入win10系统桌面，鼠标右键“我的电脑”，选择“属性”打开</li>
+<li>在新出现的界面中选择“高级系统设置”打开。</li>
+<li>在弹出的界面中点击“高级”，在性能的右下边，选择“设置”打开。</li>
+<li>在“性能选项”界面中切换到“高级”，选择“更改”打开。</li>
+<li>将虚拟内存界面中的勾去除，选择“自定义”，托管的系统选择C盘。</li>
+<li>设置虚拟内存建议最多不超过实际内存的2倍，设置完毕后点击确定，重启系统即可应用设置。</li>
+<li>虚拟内存设置大小一般应该为物理内存的1.5倍为好，如果物理内存为2G，虚拟内存应该设置为3G=3072MB，如果物理内存为4G，那虚拟内存应该设置为6G=6144MB。我把内存设置为了8G（最小值）-10G（最大值）</li>
+</ol>
+</li>
+<li>编程</li>
+</ol>
+<ul>
+<li>python代码如下：<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">convert_xls_to_csv</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        data_xls = pd.read_excel(<span class="string">"sfo.xls"</span>,<span class="string">"Sheet1"</span>,index_col=<span class="keyword">None</span>)</div><div class="line">        data_xls.to_csv(<span class="string">"test_csv.csv"</span>, encoding=<span class="string">'utf-8'</span>, index=<span class="keyword">False</span>)</div><div class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</div><div class="line">        print(e)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>然后调用函数<code>convert_xls_to_csv()</code>即可</p>
+<ul>
+<li>注意：该方法有局限，如果遇到xls文件中有比较奇怪的数据，比如有”\t”这类符号，就会转换失败</li>
+<li>该方法参考自：<ol>
+<li><a href="https://zhuanlan.zhihu.com/p/28609080" target="_blank" rel="external">zhihu</a></li>
+<li><a href="https://blog.csdn.net/u013870094/article/details/53140378" target="_blank" rel="external">csdn1</a></li>
+<li><a href="https://blog.csdn.net/u012965373/article/details/56282344" target="_blank" rel="external">csdn2</a></li>
+</ol>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hungryfoolou.github.io/2019/08/16/pycharm导入项目时某些import语句失效/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="圈亮">
+      <meta itemprop="description" content="Day Day Up">
+      <meta itemprop="image" content="/images/dog.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="圈亮的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/16/pycharm导入项目时某些import语句失效/" itemprop="url">
+                  pycharm导入项目时某些import语句失效
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-16 14:42:26 / 修改时间：14:46:22" itemprop="dateCreated datePublished" datetime="2019-08-16T14:42:26+08:00">2019-08-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+
+        
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a>Problem Description</h2><p>换了新的电脑，用pycharm导入原来的旧电脑的项目时，提示项目里面的某些import语句无法识别</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>右击项目名称，选择Mark Directory as-&gt;Source Root</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://hungryfoolou.github.io/2019/08/01/重装系统配置Hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1680,391 +2035,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hungryfoolou.github.io/2019/04/21/文章标题可以超过50个字符了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="圈亮">
-      <meta itemprop="description" content="Day Day Up">
-      <meta itemprop="image" content="/images/dog.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="圈亮的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/21/文章标题可以超过50个字符了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了/" itemprop="url">
-                  文章标题可以超过50个字符了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了了
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-21 13:20:19" itemprop="dateCreated datePublished" datetime="2019-04-21T13:20:19+08:00">2019-04-21</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-22 18:48:44" itemprop="dateModified" datetime="2019-04-22T18:48:44+08:00">2019-04-22</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Diary/" itemprop="url" rel="index"><span itemprop="name">Diary</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-
-        
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="标题可以超过50个字符了"><a href="#标题可以超过50个字符了" class="headerlink" title="标题可以超过50个字符了"></a>标题可以超过50个字符了</h2><p>哈哈哈，之前起文章标题总是起英文名，总怕起中文名一不小心就超过50个字符了，后来发现英文的文章标题也容易超过50个字符，解决办法:  <a href="https://liujunzhou.top/2018/8/10/gitalk-error/#%E6%9C%AA%E6%89%BE%E5%88%B0%E7%9B%B8%E5%85%B3%E7%9A%84Issues%E8%BF%9B%E8%A1%8C%E8%AF%84%E8%AE%BA%EF%BC%8C%E8%AF%B7%E8%81%94%E7%B3%BBXXX%E8%BF%9B%E8%A1%8C%E5%88%9B%E5%BB%BA" target="_blank" rel="external">Hexo NexT使用Gitalk未找到相关的Issues进行评论Error:Validation Failed</a>，部分文章的评论区会报Error: Validation Failed,具体原因是由于 Github 限制 label 长度不能超过 50引起的，解决方法是通过MD5加密ID来缩短label长度。</p>
-<h2 id="放一个视频"><a href="#放一个视频" class="headerlink" title="放一个视频"></a>放一个视频</h2><p>kinjaz超酷舞蹈</p>
-<p><div style="position:relative;height:0;padding-bottom:75%"><br><iframe style="position:absolute;left:0;top:0;width:90%;height:90%" src="//player.bilibili.com/player.html?aid=12132371&cid=20006879&page=1" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen></iframe><br></div></p>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hungryfoolou.github.io/2019/04/20/The-first-time-to-send-danmaku-in-bilibili/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="圈亮">
-      <meta itemprop="description" content="Day Day Up">
-      <meta itemprop="image" content="/images/dog.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="圈亮的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/20/The-first-time-to-send-danmaku-in-bilibili/" itemprop="url">
-                  The first time to send danmaku in bilibili
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-20 18:03:47 / 修改时间：20:34:12" itemprop="dateCreated datePublished" datetime="2019-04-20T18:03:47+08:00">2019-04-20</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Diary/" itemprop="url" rel="index"><span itemprop="name">Diary</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-
-        
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>买了明天的一张音乐会的票：《四月是你的谎言》–“公生”与“熏”的钢琴小提琴唯美经典音乐集，为了避免像上次去参加玩野潮青年音乐节听歌时不会唱很多歌的尴尬局面，刚在b站上把《四月是你的谎言》补了，至少熟悉一下背景。总的而言，这个番比天线宝宝好看很多，倒也没同学说的那么让人抑郁（再抑郁也比不上《人间失格》），感觉挺好的，熏在知道自己剩下的日子不多了，是想着如何利用好这些日子，要吃好吃的，要随意地不按照谱子拉小提琴，要和公生一起合奏，帮助公生走出了阴影。<br>看完这个番后，想发个弹幕却发现等级不够，于是回答了蛮多题目才升了一级，发了一个弹幕。<br>下面是这部番里面美美的图片：</p>
-<ul>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/1.png" alt="photo1"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/2.png" alt="photo2"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/3.png" alt="photo3"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/4.png" alt="photo4"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/5.png" alt="photo5"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/6.png" alt="photo6"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/7.png" alt="photo7"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/8.png" alt="photo8"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/9.png" alt="photo9"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/10.png" alt="photo10"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/11.png" alt="photo11"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/12.png" alt="photo12"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/13.png" alt="photo13"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/14.png" alt="photo14"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/15.png" alt="photo15"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/16.png" alt="photo16"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/17.png" alt="photo17"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/18.png" alt="photo18"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/19.png" alt="photo19"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/20.png" alt="photo20"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/21.png" alt="photo21"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/22.png" alt="photo22"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/23.png" alt="photo23"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/24.png" alt="photo24"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/25.png" alt="photo25"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/26.png" alt="photo26"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/27.png" alt="photo27"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/28.png" alt="photo28"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/29.png" alt="photo29"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/30.png" alt="photo30"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/31.png" alt="photo31"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/32.png" alt="photo32"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/33.png" alt="photo33"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/34.png" alt="photo34"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/35.png" alt="photo35"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/36.png" alt="photo36"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/37.png" alt="photo37"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/38.png" alt="photo38"></li>
-<li><img src="https://github.com/hungryfoolou/photo/raw/master/blog/The-first-time-to-send-danmaku-in-bilibili/39.png" alt="photo39"></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2111,7 +2086,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-count">31</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
