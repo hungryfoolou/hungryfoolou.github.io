@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
+    <title><![CDATA[通过github上传大文件]]></title>
     <url>%2F2019%2F08%2F16%2F%E9%80%9A%E8%BF%87github%E4%B8%8A%E4%BC%A0%E5%A4%A7%E6%96%87%E4%BB%B6%2F</url>
-    <content type="text"><![CDATA[title: 通过github上传大文件date: 2019-08-16 19:49:44categories: Python 上传大文件到github右击你想要上传的文件夹，选择git bash，在弹出的窗口中输入以下命令：1git config http.postBuffer 524288000]]></content>
+    <content type="text"><![CDATA[上传大文件到github右击你想要上传的文件夹，选择git bash，在弹出的窗口中输入以下命令：1git config http.postBuffer 524288000]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[将大文件的xls格式转换为csv格式]]></title>
