@@ -32,7 +32,7 @@
   <entry>
     <title><![CDATA[重装系统配置Hexo]]></title>
     <url>%2F2019%2F08%2F01%2F%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AEHexo%2F</url>
-    <content type="text"><![CDATA[1.安装git2.安装Node.js3.在本地新建hungryfoolou.github.io文件夹(这是我的github.io的名字，这样是为了查找方便)4.使用命令安装Hexo右键选择Git Bash Here，弹出Git Bash窗口；执行命令：12npm install -g hexo-clihexo init 5.连接github仓库12git config --global user.name "user.name"git config --global user.email "user.email" 6.把原来博客的所有文件复制到hungryfoolou.github.io文件夹]]></content>
+    <content type="text"><![CDATA[1.安装git2.安装Node.js3.在本地新建hungryfoolou.github.io文件夹(这是我的github.io的名字，这样是为了查找方便)4.使用命令安装Hexo进入hungryfoolou.github.io文件夹，鼠标右键选择Git Bash Here，弹出Git Bash窗口；执行命令：12npm install -g hexo-clihexo init 5.连接github仓库12git config --global user.name "user.name"git config --global user.email "user.email" 6.把原来博客的所有文件复制到hungryfoolou.github.io文件夹]]></content>
       <categories>
         <category>Diary</category>
       </categories>
